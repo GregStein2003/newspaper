@@ -10,7 +10,7 @@
 
 <span>Ao clicar no ícone <i>“+”</i>, será aberto um modal que permite o usuário a cadastrar as informações.</span>
 
-![image](https://user-images.githubusercontent.com/54418285/191395276-d53138fe-ef7b-45da-abba-375c1329e712.png)
+![image](https://user-images.githubusercontent.com/54418285/191396967-e666d2d3-0ecb-4afb-bf31-54c6741688dd.png)
 
 <span>Caso o usuário não informe um dos três campos obrigatórios ao clicar em <strong>“Enviar”</strong>, aparecerá um outro popup com a descrição dos campos obrigatórios.</span>
 
