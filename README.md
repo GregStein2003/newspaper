@@ -30,3 +30,4 @@
 
 <p> Por fim, é de extrema importância citar a última funcionalidade criada, a mesma foi pensada caso, exista muitas notícias criadas e o usuário tenha dificuldade de navegar e encontrar a notícia que o mesmo gostaria, é possível filtrar as notícias pelo título, através da barra de busca, ou seja, caso você deseje, pode filtrar pelo título e só será exibido o card conforme a busca. </p>
 
+![image](https://user-images.githubusercontent.com/54418285/191397169-a223005c-ab08-4942-b5b0-212d50a06efb.png)
