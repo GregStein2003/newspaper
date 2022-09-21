@@ -1,0 +1,11 @@
+{% if validation %}
+    <div class="popup-validation__container js-popup-alert">
+        <h1 class="popup-validation__title popup-validation__title--alert">ATENÇÃO!</h1>
+        <button class="popup-validation__close js-popup-close">X</button>
+        <ul class="popup-validation__list">
+            {% for error in validation.errors %}
+               <li class="popup-validation__list-item">- {{ error.msg }};</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

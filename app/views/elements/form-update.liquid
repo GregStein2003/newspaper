@@ -1,0 +1,18 @@
+{% assign newDate = update.date | date: "%Y-%m-%d" %}
+
+<form action="/update/post/{{ update.id }}" method="POST" class="popup-add__form">
+    <div>
+        <label class="popup-add__label" for="date">Data:</label>
+        <input type="date" name="date" class="popup-add__input popup-add__input-date" value="{{ newDate }}">
+    </div>  
+    <div>
+        <label class="popup-add__label" for="title">Título:</label>
+        <input type="text" name="title" class="popup-add__input" value="{{ update.title }}">
+    </div> 
+    <div>
+        <label for="areaText" class="popup-add__label">Mensagem: </label>
+        <textarea class="popup-add__text-area" name="areaText" cols="30" rows="10">{{ update.areaText }}</textarea>
+    </div>
+
+    <button type="submit" class="popup-add__submit">Enviar</button>
+</form>

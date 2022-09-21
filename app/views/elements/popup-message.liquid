@@ -1,0 +1,11 @@
+{% if message == "sucess" %}
+    <div class="popup-sucess js-popup-message">
+        <strong>Successo! informação registrada.</strong>
+        <a href="javascript:void(0);" class="popup-sucess__close js-sucess-close">X</a>
+    </div>
+    {% else %}
+    <div class="popup-delete js-popup-message">
+        <strong>Informação deletada!</strong>
+        <a href="javascript:void(0);" class="popup-delete__close js-sucess-close">X</a>
+    </div>
+{% endif %}

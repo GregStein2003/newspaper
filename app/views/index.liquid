@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="/sass/style.css">
+</head>
+
+<body class="{% if validation or update %} popup--active {% endif %}">
+
+    <header>
+        <div class="wrapper">
+            <div class="header-container">
+                <h1 class="header-container__title">Newspaper</h1>
+                <div class="header-container__add">
+                    <h2 class="header-container__subtitle">Blog</h2>
+                    <div class="header-container__icon-plus js-addNews">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="header-search">
+                <div class="header-search__container">
+                    <img src="/images/icon-search.svg" class="header-search__icon" alt="Search">
+                    <input type="text" class="header-search__button js-button-search" placeholder="Pesquisar no blog">
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="wrapper">
+            {% if news %}
+                {% for itemNews in news %}
+                    <div class="box-item" >
+                        <div class="box-item__container">
+                            <div class="box-item__high">
+                                <span class="box-item__date">{{ itemNews.date | date: "%d/%m/%Y" }}</span>
+                                <div class="box-item__container-icon">
+                                    <a href="/delete/{{ itemNews._id }}">
+                                        <img src="/images/icon-delete.png" class="box-item__icon" alt="Delete">
+                                    </a>
+                                    <a href="/update/{{ itemNews._id }}">
+                                        <img src="/images/icon-edit.png" class="box-item__icon box-item__icon-edit" alt="Delete">
+                                    </a>
+                                </div>
+                            </div>
+                            <h2 class="box-item__title">{{ itemNews.title }}</h2>
+                            <p class="box-item__text">{{ itemNews.areaText }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h1 class="no-results__title">Nenhuma notícia cadastrada!</h1>
+            {% endif %}
+        </div>
+    </main>
+
+    <div class="popup-add__container js-popup-add {% if update %} popup-add__container--active update {% endif %}">
+        <h1 class="popup-add__title">Inserir nova notícia</h1>
+        <button class="popup-add__close js-popup-close">X</button>
+
+        {% if update %} 
+            {% include 'elements/form-update' %}
+        {% else %}
+            {% include 'elements/form-add' %}
+        {% endif %}
+    </div>
+
+    {% include 'elements/popup-alert' %}
+
+    {% if message %}
+        {% include 'elements/popup-message' %}
+    {% endif %}
+
+    
+</body>
+    <script src="/js/modules/jquery-3.6.0.min.js"></script>
+    <script src="/js/init.js"></script>
+</html>
